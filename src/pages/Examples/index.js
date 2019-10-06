@@ -1,6 +1,6 @@
 import React from "react";
 
-import PdfViewer from "../../components/PDFViewer";
+import PdfViewer from "~/components/PDFViewer";
 
 const Examples = () => (
   <PdfViewer

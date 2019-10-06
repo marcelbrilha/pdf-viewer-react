@@ -4,8 +4,10 @@
   "private": true,
   "author": "Marcel Brilha",
   "dependencies": {
+    "@craco/craco": "^5.5.0",
     "@material-ui/core": "^4.4.3",
     "@material-ui/icons": "^4.4.3",
+    "lodash": "^4.17.15",
     "pdfjs-dist": "2.1.266",
     "prop-types": "^15.7.2",
     "react": "^16.10.1",
@@ -15,9 +17,9 @@
     "react-scripts": "3.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

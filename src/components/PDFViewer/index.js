@@ -6,7 +6,9 @@ import { isMobile } from "react-device-detect";
 
 import Style from "./style";
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = import(
+  "pdfjs-dist/build/pdf.worker.entry"
+);
 
 const CreatePages = (numPages, scale, page) => {
   const pages = [];
