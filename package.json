@@ -2,9 +2,16 @@
   "name": "react-pdf-viewer",
   "version": "0.1.0",
   "private": true,
+  "author": "Marcel Brilha",
   "dependencies": {
+    "@material-ui/core": "^4.4.3",
+    "@material-ui/icons": "^4.4.3",
+    "pdfjs-dist": "2.1.266",
+    "prop-types": "^15.7.2",
     "react": "^16.10.1",
+    "react-device-detect": "^1.9.10",
     "react-dom": "^16.10.1",
+    "react-pdf": "4.1.0",
     "react-scripts": "3.1.2"
   },
   "scripts": {
