@@ -5,7 +5,7 @@ import PdfViewer from "~/components/PDFViewer";
 const Examples = () => (
   <PdfViewer
     file="./sample.pdf"
-    filename="Example.pdf"
+    filename="Análise de eficiência na detecção de vulnerabilidades em sistemas web com o uso de ferramentas gratuitas e de código aberto"
     onClose={() => console.log("OnClose")}
   />
 );

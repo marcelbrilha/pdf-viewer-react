@@ -116,6 +116,11 @@ const PagesNavigator = ({
     containerPagination
   } = classes;
 
+  const fileNameProcessed =
+    String(filename).length > 30
+      ? `${String(filename).substr(0, 30)} ...`
+      : filename;
+
   const handlePage = type => {
     const comparation = type === "next" ? page < numPages / 10 - 1 : page > 0;
     const newPage = type === "next" ? page + 1 : page - 1;
@@ -134,19 +139,20 @@ const PagesNavigator = ({
     >
       <Grid item xs={12} md={3} className={containerFilename}>
         <Icon className={iconFilename}>picture_as_pdf</Icon>
-        <span className={title}>{filename}</span>
+        <span className={title}>{fileNameProcessed}</span>
       </Grid>
 
-      <Grid item xs={12} md={6} className={containerPagination}>
-        {fullLoading &&
-          `Pág. ${page * 10 + 1} até ${
+      {fullLoading && numPages > 10 && (
+        <Grid item xs={12} md={6} className={containerPagination}>
+          {`Pág. ${page * 10 + 1} até ${
             numPages <= 10
               ? numPages
               : (page + 1) * 10 > numPages
               ? numPages
               : (page + 1) * 10
           } de ${numPages}`}
-      </Grid>
+        </Grid>
+      )}
 
       <Grid item xs={12} md={3}>
         <Grid
@@ -203,8 +209,8 @@ const PDFViewer = ({ file, filename, onClose }) => {
     pageNumber: 10,
     page: 0,
     minScale: 500,
-    maxScale: 1200,
-    scalePoint: 100
+    maxScale: parseInt(window.innerWidth) - 50,
+    scalePoint: 40
   });
 
   const onDocumentLoadSuccess = ({ numPages }) => {
