@@ -161,17 +161,21 @@ const PagesNavigator = ({
           alignItems="center"
           className={containerNavigation}
         >
-          <Tooltip title="10 páginas anteriores" placement="bottom">
-            <Fab disableRipple onClick={() => handlePage("previous")}>
-              <Icon>navigate_before</Icon>
-            </Fab>
-          </Tooltip>
+          {numPages > 10 && (
+            <div>
+              <Tooltip title="10 páginas anteriores" placement="bottom">
+                <Fab disableRipple onClick={() => handlePage("previous")}>
+                  <Icon>navigate_before</Icon>
+                </Fab>
+              </Tooltip>
 
-          <Tooltip title="Próximas 10 páginas" placement="bottom">
-            <Fab disableRipple onClick={() => handlePage("next")}>
-              <Icon>navigate_next</Icon>
-            </Fab>
-          </Tooltip>
+              <Tooltip title="Próximas 10 páginas" placement="bottom">
+                <Fab disableRipple onClick={() => handlePage("next")}>
+                  <Icon>navigate_next</Icon>
+                </Fab>
+              </Tooltip>
+            </div>
+          )}
 
           <Tooltip title="Fazer o download" placement="bottom">
             <a
