@@ -23,13 +23,6 @@ jobs:
         cache: 'npm'
     - run: npm install
 
-    - name: Lint
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm run lint
-    
     - name: Scan vulnerabilities with Horusec
       id: run_horusec
       uses: fike/horusec-action@v0.2.2
