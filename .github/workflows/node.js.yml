@@ -1,0 +1,42 @@
+name: PDF Viewer - ReactJS - CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install dependencies
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm install
+
+    - name: Lint
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm run lint
+    
+    - name: Scan vulnerabilities with Horusec
+      id: run_horusec
+      uses: fike/horusec-action@v0.2.2
+      with:
+        arguments: -c=horusec-config.json -p ./
+        
+    - name: Scan vulnerabilities with Snyk
+      uses: snyk/actions/node@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
