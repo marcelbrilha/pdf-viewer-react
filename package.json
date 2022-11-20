@@ -14,7 +14,7 @@
     "react-device-detect": "^1.9.10",
     "react-dom": "^16.10.1",
     "react-pdf": "4.1.0",
-    "react-scripts": "3.1.2"
+    "react-scripts": "5.0.0"
   },
   "scripts": {
     "start": "craco start",
@@ -22,9 +22,6 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [

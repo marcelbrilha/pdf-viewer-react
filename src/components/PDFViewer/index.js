@@ -53,7 +53,7 @@ const ZoomNavigator = ({ config, setConfig }) => {
     <Grid
       container
       direction="column"
-      justify="space-between"
+      justifyContent="space-between"
       alignItems="flex-end"
     >
       <Grid item>
@@ -132,7 +132,7 @@ const PagesNavigator = ({
     <Grid
       container
       direction="row"
-      justify="space-between"
+      justifyContent="space-between"
       alignItems="center"
       className={header}
       spacing={2}
@@ -226,7 +226,7 @@ const PDFViewer = ({ file, filename, onClose }) => {
       <Grid
         container
         direction="column"
-        justify="flex-start"
+        justifyContent="flex-start"
         alignItems="stretch"
         className={classes.container}
       >
@@ -245,7 +245,7 @@ const PDFViewer = ({ file, filename, onClose }) => {
           <Grid
             container
             direction="row"
-            justify="space-between"
+            justifyContent="space-between"
             alignItems="flex-end"
             className={classes.content}
           >
