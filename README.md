@@ -7,7 +7,6 @@ Component - PDF Reader
 | Description | Command       |
 | ----------- | ------------- |
 | Install     | npm install   |
-| Code lint   | npm run lint  |
 | Start App   | npm run start |
 
 ## Examples
